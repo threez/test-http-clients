@@ -1,4 +1,3 @@
-require 'base'
 require 'patron'
 
 sess = Patron::Session.new

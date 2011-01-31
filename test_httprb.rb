@@ -1,4 +1,3 @@
-require 'base'
 require 'httprb'
 
 test_http("httprb") do

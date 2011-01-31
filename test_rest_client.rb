@@ -1,4 +1,3 @@
-require 'base'
 require 'restclient'
 
 test_http("RestClient") do

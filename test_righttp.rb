@@ -1,4 +1,3 @@
-require 'base'
 require 'righttp'
 
 test_http("righttp") do

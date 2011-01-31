@@ -1,4 +1,3 @@
-require 'base'
 require 'net/http'
 
 test_http("net/http") do

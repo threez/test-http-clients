@@ -1,4 +1,3 @@
-require 'base'
 require 'httpclient'
 
 client = HTTPClient.new
