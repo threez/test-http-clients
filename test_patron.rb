@@ -1,5 +1,3 @@
-require 'patron'
-
 sess = Patron::Session.new
 test_http("patron") do
   sess.headers["X-Test"] = "test"

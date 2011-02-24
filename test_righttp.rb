@@ -1,5 +1,3 @@
-require 'righttp'
-
 test_http("righttp") do
   request  = Rig::HTTP.new(
     :host   => URL.host,
@@ -12,4 +10,3 @@ test_http("righttp") do
   data = JSON.parse(resp.body)
   raise Exception.new unless data.first["number"] != 123123
 end
-

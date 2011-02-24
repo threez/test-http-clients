@@ -1,5 +1,3 @@
-require 'httprb'
-
 test_http("httprb") do
   resp = HTTPrb.get(URL.to_s) do
     header "X-Test", "test"

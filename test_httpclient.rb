@@ -1,5 +1,3 @@
-require 'httpclient'
-
 client = HTTPClient.new
 test_http("httpclient") do
   client = HTTPClient.new

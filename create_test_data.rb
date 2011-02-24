@@ -1,5 +1,6 @@
-require "rubygems"
-require "json"
+require 'bundler'
+Bundler.require :default
+require 'yajl/json_gem'
 
 def dr           
   {

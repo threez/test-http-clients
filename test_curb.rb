@@ -1,5 +1,3 @@
-require "curb"
-
 c = Curl::Easy.new
 test_http("curb") do
   c.url = URL.to_s

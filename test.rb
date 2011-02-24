@@ -1,8 +1,10 @@
 require 'rubygems'
+require 'bundler'
+Bundler.require :default
 require 'uri'
 require 'benchmark'
-require 'yajl'
 require 'yajl/json_gem'
+require 'net/http'
 
 ITERATIONS = 1000
 TESTS = []
@@ -20,10 +22,16 @@ Dir[File.join(dir, "test_*.rb")].each do |file|
 end
 
 at_exit do
+  puts "Execute http performance test using ruby #{RUBY_DESCRIPTION}"
+  puts "  doing #{ITERATIONS} request in each test..."
   Benchmark.bm(20) do |x|
     for name, block in TESTS do
-      x.report("testing #{name}") do
-        ITERATIONS.times(&block)
+      begin
+        x.report("testing #{name}") do
+          ITERATIONS.times(&block)
+        end
+      rescue => ex
+        puts " --> failed #{ex}"
       end
     end
   end

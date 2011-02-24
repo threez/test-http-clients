@@ -1,5 +1,3 @@
-require "httparty"
-
 class PartyService
   include HTTParty
   base_uri URL.to_s

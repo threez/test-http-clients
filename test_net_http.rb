@@ -1,5 +1,3 @@
-require 'net/http'
-
 test_http("net/http") do
   resp = Net::HTTP.start(URL.host, URL.port) {|http|
     http.get(URL.path, {"X-Test" => "test"})
