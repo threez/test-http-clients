@@ -3,6 +3,7 @@ GEM
   specs:
     crack (0.1.8)
     curb (0.7.12)
+    eventmachine (0.12.10)
     httparty (0.7.4)
       crack (= 0.1.8)
     httpclient (2.1.6.1)
@@ -24,6 +25,7 @@ PLATFORMS
 
 DEPENDENCIES
   curb
+  eventmachine
   httparty
   httpclient
   httprb

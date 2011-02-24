@@ -6,14 +6,15 @@ require 'benchmark'
 require 'yajl/json_gem'
 require 'net/http'
 
-ITERATIONS = 1000
+ITERATIONS = ARGV.shift.to_i
+PATH = ARGV.shift
 TESTS = []
 
 def test_http(name, &block)
   TESTS << [name, block]
 end
 
-URL = URI.parse("http://localhost/~vincentlandgraf/test.json")
+URL = URI.parse(PATH)
 
 dir = File.dirname(__FILE__)
 
