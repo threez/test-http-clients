@@ -13,6 +13,7 @@ test-ruby:
 test-java:
 	java -version
 	java -server -jar java/target/http-test-0.0.1-SNAPSHOT.jar $(COUNT) $(URL)
+	java -jar java/target/http-test-0.0.1-SNAPSHOT.jar $(COUNT) $(URL)
 
 test-apache:
 	ab -n $(COUNT) $(URL)
