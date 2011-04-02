@@ -8,6 +8,7 @@ require 'net/http'
 
 ITERATIONS = ARGV.shift.to_i
 PATH = ARGV.shift
+FILES = ARGV.shift || "test_*.rb"
 TESTS = []
 
 def test_http(name, &block)
@@ -18,7 +19,7 @@ URL = URI.parse(PATH)
 
 dir = File.dirname(__FILE__)
 
-Dir[File.join(dir, "test_*.rb")].each do |file|
+Dir[File.join(dir, FILES)].each do |file|
   require file
 end
 

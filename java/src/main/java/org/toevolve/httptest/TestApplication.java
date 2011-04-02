@@ -6,7 +6,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import java.lang.management.*;
 
-
 public abstract class TestApplication {
 	/** code from http://nadeausoftware.com/articles/2008/03/java_tip_how_get_cpu_and_user_time_benchmarking **/
 	
@@ -41,10 +40,12 @@ public abstract class TestApplication {
 		long startSystemTimeNano = getSystemTime();
 		long startUserTimeNano   = getUserTime();
 		
+		app.prepare(url);
 		// do the test
 		for (int i = 0; i < iterations; ++i) {
 			app.testRequest(url);
 		}
+		app.tearDown();
 		
 		// end time
 		long taskUserTimeNano    = getUserTime() - startUserTimeNano;
@@ -75,5 +76,9 @@ public abstract class TestApplication {
 		}
 	}
 
+  abstract void prepare(URL url) throws Exception;
+
 	abstract void testRequest(URL url) throws Exception;
+	
+	abstract void tearDown() throws Exception;
 }

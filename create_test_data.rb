@@ -1,3 +1,4 @@
+require "rubygems"
 require 'bundler'
 Bundler.require :default
 require 'yajl/json_gem'
