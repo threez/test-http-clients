@@ -1,183 +1,98 @@
-rvm 1.9.2,1.8.7 exec bundle install
-Using crack (0.1.8) 
-Using curb (0.7.12) 
-Using eventmachine (0.12.10) 
-Using httparty (0.7.4) 
-Using httpclient (2.1.6.1) 
-Using httprb (0.1.5) 
-Using mime-types (1.16) 
-Using patron (0.4.11) 
-Using rest-client (1.6.1) 
-Using righttp (0.1.5) 
-Using rufus-json (0.2.5) 
-Using rufus-lru (1.0.3) 
-Using rufus-jig (1.0.0) 
-Using yajl-ruby (0.8.1) 
-Using bundler (1.0.10) 
-Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
-Using crack (0.1.8) 
-Using curb (0.7.12) 
-Using eventmachine (0.12.10) 
-Using httparty (0.7.4) 
-Using httpclient (2.1.6.1) 
-Using httprb (0.1.5) 
-Using mime-types (1.16) 
-Using patron (0.4.11) 
-Using rest-client (1.6.1) 
-Using righttp (0.1.5) 
-Using rufus-json (0.2.5) 
-Using rufus-lru (1.0.3) 
-Using rufus-jig (1.0.0) 
-Using yajl-ruby (0.8.1) 
-Using bundler (1.0.10) 
-Your bundle is complete! Use `bundle show [gemname]` to see where a bundled gem is installed.
-cd java && mvn clean && mvn package
-[INFO] Scanning for projects...
-[INFO] ------------------------------------------------------------------------
-[INFO] Building Unnamed - toevolve.org:http-test:jar:0.0.1-SNAPSHOT
-[INFO]    task-segment: [clean]
-[INFO] ------------------------------------------------------------------------
-[INFO] [clean:clean {execution: default-clean}]
-[INFO] Deleting directory /Users/vincentlandgraf/Development/test-http-clients/java/target
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESSFUL
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 1 second
-[INFO] Finished at: Sun Feb 27 19:24:48 CET 2011
-[INFO] Final Memory: 6M/81M
-[INFO] ------------------------------------------------------------------------
-[INFO] Scanning for projects...
-[INFO] ------------------------------------------------------------------------
-[INFO] Building Unnamed - toevolve.org:http-test:jar:0.0.1-SNAPSHOT
-[INFO]    task-segment: [package]
-[INFO] ------------------------------------------------------------------------
-[INFO] [resources:resources {execution: default-resources}]
-[WARNING] Using platform encoding (MacRoman actually) to copy filtered resources, i.e. build is platform dependent!
-[INFO] Copying 0 resource
-[INFO] [compiler:compile {execution: default-compile}]
-[INFO] Compiling 2 source files to /Users/vincentlandgraf/Development/test-http-clients/java/target/classes
-[INFO] [resources:testResources {execution: default-testResources}]
-[WARNING] Using platform encoding (MacRoman actually) to copy filtered resources, i.e. build is platform dependent!
-[INFO] Copying 0 resource
-[INFO] [compiler:testCompile {execution: default-testCompile}]
-[INFO] Nothing to compile - all classes are up to date
-[INFO] [surefire:test {execution: default-test}]
-[INFO] Surefire report directory: /Users/vincentlandgraf/Development/test-http-clients/java/target/surefire-reports
-
--------------------------------------------------------
- T E S T S
--------------------------------------------------------
-There are no tests to run.
-
-Results :
-
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
-
-[INFO] [jar:jar {execution: default-jar}]
-[INFO] Building jar: /Users/vincentlandgraf/Development/test-http-clients/java/target/http-test-0.0.1-SNAPSHOT.jar
-[INFO] [shade:shade {execution: default}]
-[INFO] Including commons-httpclient:commons-httpclient:jar:20020423 in the shaded jar.
-[INFO] Including com.googlecode.json-simple:json-simple:jar:1.1 in the shaded jar.
-[INFO] Replacing original artifact with shaded artifact.
-[INFO] Replacing /Users/vincentlandgraf/Development/test-http-clients/java/target/http-test-0.0.1-SNAPSHOT.jar with /Users/vincentlandgraf/Development/test-http-clients/java/target/http-test-0.0.1-SNAPSHOT-shaded.jar
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESSFUL
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 4 seconds
-[INFO] Finished at: Sun Feb 27 19:24:54 CET 2011
-[INFO] Final Memory: 23M/81M
-[INFO] ------------------------------------------------------------------------
-rvm 1.9.2,1.8.7 exec ruby test.rb 10000 "http://localhost/~vincentlandgraf/test.json"
 Execute http performance test using ruby ruby 1.9.2p180 (2011-02-18 revision 30909) [x86_64-darwin10.6.0]
   doing 10000 request in each test...
                           user     system      total        real
-testing curb          4.160000   0.680000   4.840000 (  6.775745)
-testing curl         10.510000  54.290000 170.460000 (162.886148)
-testing httparty     --> failed undefined method `first' for #<HTTParty::Response:0x00000100e983c8>
-testing httpclient  139.500000  12.030000 151.530000 (194.952611)
-testing httprb       13.470000   1.630000  15.100000 ( 26.177231)
-testing net/http     12.750000   1.580000  14.330000 ( 19.550715)
-testing patron        5.170000   0.640000   5.810000 (  7.879010)
-testing RestClient   --> failed undefined method `first' for #<String:0x000001008ea908>
-testing righttp       7.120000   1.590000   8.710000 ( 13.844465)
-testing rufus-jig     8.990000   1.590000  10.580000 ( 22.898374)
+testing curb          4.440000   1.000000   5.440000 ( 11.419920)
+testing curl         10.850000  43.560000 161.490000 (156.847936)
+testing httparty     47.390000   1.990000  49.380000 ( 57.106096)
+testing httpclient  138.780000  12.430000 151.210000 (208.142251)
+testing httprb       13.450000   1.650000  15.100000 ( 26.002268)
+testing net/http     12.400000   1.600000  14.000000 ( 20.534805)
+testing patron        5.670000   1.040000   6.710000 ( 12.757735)
+testing RestClient   15.220000   1.690000  16.910000 ( 23.757431)
+testing righttp       8.610000   2.630000  11.240000 ( 23.175959)
+testing rufus-jig    11.010000   2.080000  13.090000 ( 37.957054)
 Execute http performance test using ruby ruby 1.8.7 (2011-02-18 patchlevel 334) [i686-darwin10.6.0]
   doing 10000 request in each test...
                           user     system      total        real
-testing curb          5.150000   0.740000   5.890000 (  8.028821)
-testing curl         12.860000  43.620000 156.880000 (167.441665)
-testing httparty     12.320000   1.720000  14.040000 ( 17.943599)
-testing httpclient  141.810000  13.000000 154.810000 (234.884479)
-testing httprb       17.650000   1.840000  19.490000 ( 34.694699)
-testing net/http     15.940000   1.780000  17.720000 ( 21.454700)
-testing patron        6.490000   0.700000   7.190000 (  9.838598)
-testing RestClient   18.420000   1.760000  20.180000 ( 24.593046)
-testing righttp      10.690000   1.590000  12.280000 ( 16.514800)
-testing rufus-jig    10.530000   2.040000  12.570000 ( 23.859456)
-java -version
-java version "1.6.0_22"
-Java(TM) SE Runtime Environment (build 1.6.0_22-b04-307-10M3261)
-Java HotSpot(TM) 64-Bit Server VM (build 17.1-b03-307, mixed mode)
-java -server -jar java/target/http-test-0.0.1-SNAPSHOT.jar 10000 "http://localhost/~vincentlandgraf/test.json"
-Time for 10000 requests to http://localhost/~vincentlandgraf/test.json:
+testing curb          5.540000   1.100000   6.640000 ( 13.137579)
+testing curl         12.900000  43.720000 158.450000 (172.777551)
+testing httparty     55.140000   3.380000  58.520000 ( 66.566792)
+testing httpclient  142.000000  13.380000 155.380000 (242.390312)
+testing httprb       17.690000   2.030000  19.720000 ( 42.169571)
+testing net/http     15.660000   1.910000  17.570000 ( 24.812459)
+testing patron        6.840000   1.420000   8.260000 ( 14.602333)
+testing RestClient   20.180000   2.120000  22.300000 ( 30.403473)
+testing righttp      12.110000   2.570000  14.680000 ( 28.235797)
+testing rufus-jig    12.540000   2.580000  15.120000 ( 31.141118)
+Time for 10000 requests to http://169.254.41.121/~vincentlandgraf/test.json:
                           user     system      total        real
-testing httpclient    8,797255   5,184243  13,981498 ( 17,547000)
-java -jar java/target/http-test-0.0.1-SNAPSHOT.jar 10000 "http://localhost/~vincentlandgraf/test.json"
-Time for 10000 requests to http://localhost/~vincentlandgraf/test.json:
+testing httpclient    7,832342   4,183709  12,016051 ( 21,852000)
+Time for 10000 requests to http://169.254.41.121/~vincentlandgraf/test.json:
                           user     system      total        real
-testing httpclient    8,743896   5,058189  13,802085 ( 17,866000)
-ab -n 10000 "http://localhost/~vincentlandgraf/test.json"
+testing httpclient    7,978861   4,256037  12,234898 ( 21,662000)
 This is ApacheBench, Version 2.3 <$Revision: 655654 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
 
-Benchmarking localhost (be patient)
-Completed 1000 requests
-Completed 2000 requests
-Completed 3000 requests
-Completed 4000 requests
-Completed 5000 requests
-Completed 6000 requests
-Completed 7000 requests
-Completed 8000 requests
-Completed 9000 requests
-Completed 10000 requests
-Finished 10000 requests
+Benchmarking 169.254.41.121 (be patient)
 
 
-Server Software:        Apache/2.2.15
-Server Hostname:        localhost
+Server Software:        Apache/2.2.17
+Server Hostname:        169.254.41.121
 Server Port:            80
 
 Document Path:          /~vincentlandgraf/test.json
 Document Length:        16621 bytes
 
 Concurrency Level:      1
-Time taken for tests:   25.861 seconds
+Time taken for tests:   13.043 seconds
 Complete requests:      10000
 Failed requests:        0
 Write errors:           0
-Total transferred:      169720000 bytes
+Total transferred:      169200000 bytes
 HTML transferred:       166210000 bytes
-Requests per second:    386.69 [#/sec] (mean)
-Time per request:       2.586 [ms] (mean)
-Time per request:       2.586 [ms] (mean, across all concurrent requests)
-Transfer rate:          6409.03 [Kbytes/sec] received
+Requests per second:    766.68 [#/sec] (mean)
+Time per request:       1.304 [ms] (mean)
+Time per request:       1.304 [ms] (mean, across all concurrent requests)
+Transfer rate:          12668.21 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    2 155.5      0   11027
-Processing:     0    0   0.1      0       3
-Waiting:        0    0   0.1      0       3
-Total:          0    3 155.5      0   11028
+Connect:        0    0   0.1      0       1
+Processing:     1    1   0.2      1      14
+Waiting:        0    1   0.1      1       9
+Total:          1    1   0.2      1      14
 
 Percentage of the requests served within a certain time (ms)
-  50%      0
-  66%      0
-  75%      0
-  80%      0
-  90%      0
-  95%      0
-  98%      0
-  99%      1
- 100%  11028 (longest request)
+  50%      1
+  66%      1
+  75%      1
+  80%      1
+  90%      2
+  95%      2
+  98%      2
+  99%      2
+ 100%     14 (longest request)
+httperf --client=0/1 --server=169.254.41.121 --port=80 --uri=/~vincentlandgraf/test.json --send-buffer=4096 --recv-buffer=16384 --num-conns=10000 --num-calls=1
+Maximum connect burst length: 1
+
+Total: connections 10000 requests 10000 replies 10000 test-duration 9.166 s
+
+Connection rate: 1091.0 conn/s (0.9 ms/conn, <=1 concurrent connections)
+Connection time [ms]: min 0.7 avg 0.9 max 3.8 median 0.5 stddev 0.2
+Connection time [ms]: connect 0.2
+Connection length [replies/conn]: 1.000
+
+Request rate: 1091.0 req/s (0.9 ms/req)
+Request size [B]: 93.0
+
+Reply rate [replies/s]: min 1086.9 avg 1086.9 max 1086.9 stddev 0.0 (1 samples)
+Reply time [ms]: response 0.4 transfer 0.3
+Reply size [B]: header 280.0 content 16621.0 footer 0.0 (total 16901.0)
+Reply status: 1xx=0 2xx=10000 3xx=0 4xx=0 5xx=0
+
+CPU time [s]: user 1.75 system 7.39 (user 19.1% system 80.6% total 99.7%)
+Net I/O: 18105.3 KB/s (148.3*10^6 bps)
+
+Errors: total 0 client-timo 0 socket-timo 0 connrefused 0 connreset 0
+Errors: fd-unavail 0 addrunavail 0 ftab-full 0 other 0
